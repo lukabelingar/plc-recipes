@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
+  <POU Name="MAIN" Id="{b5584c18-0e6b-42fb-8ba8-96aa3f08675c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	var1	: UINT;
+	var2	: LREAL;
+	var3	: STRING;
+	var4	: BOOL;
+	var5	: ARRAY[0..999] OF T_MaxString;
+	var6	: ARRAY[0..2] OF dt_params;
+
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+//just commands to the slow task
+recipes.load;
+recipes.save;
+recipes.count;
+recipes.delete;
+recipes.name;
+recipes.result;
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="9" Count="0" />
+      <LineId Id="3" Count="5" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="10" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
+  <POU Name="Recipes" Id="{1e5a2bd0-d492-4052-8016-41990bdaa11f}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Recipes
+VAR_INPUT
+	save	: BOOL;
+	load	: BOOL;
+	delete	: BOOL;
+	count	: BOOL;
+	name	: T_MaxString;
+END_VAR
+VAR_OUTPUT
+	result	: DWORD;
+END_VAR
+VAR
+	reci	: RecipeManCommands;
+END_VAR
+VAR CONSTANT
+	defname	: T_MaxString := 'testing123';
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+IF save THEN
+	save := FALSE;
+	result := reci.CreateRecipe(defname, name);
+END_IF
+
+IF load THEN
+	load := FALSE;
+	result := reci.LoadAndWriteRecipe(defname, name);
+END_IF
+
+IF delete THEN
+	delete := FALSE;
+	result := reci.DeleteRecipe(defname, name);
+END_IF
+
+IF count THEN
+	count := FALSE;
+	result := INT_TO_DWORD(reci.GetRecipeCount(defname));
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="Recipes">
+      <LineId Id="3" Count="20" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

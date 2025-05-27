@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.15">
+  <Task Name="RecipeTask" Id="{97117bfb-21b5-4b53-84fd-e8a77315f8a6}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>100000</CycleTime>
+    <Priority>8</Priority>
+    <PouCall>
+      <Name>Recipes</Name>
+    </PouCall>
+    <TaskFBGuid>{8f89cd5c-f361-4a8c-89a6-abaa217c50ae}</TaskFBGuid>
+    <Fb_init>{7db567d6-6aca-4a2b-ad85-02c586c5167d}</Fb_init>
+    <Fb_exit>{783c44c8-013f-43cd-ae14-32cef7cab51b}</Fb_exit>
+    <CycleUpdate>{827c08b8-598f-4b0e-b01f-4f4998fdecb5}</CycleUpdate>
+    <PostCycleUpdate>{23e7501e-c30c-4d8e-b6d8-87ee9fa00b0d}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>
